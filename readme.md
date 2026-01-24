@@ -2,17 +2,17 @@
 
 ## Project Overview
 
-Experiments were carried out on two popular datasets: MNIST and FashionMNIST. Two deep learning models, ResNet-18 and ResNet-50, were trained from scratch using PyTorch with different settings such as batch size, learning rate, and optimizer. Automatic Mixed Precision (AMP) was used to make training faster and more memory efficient.
+EExperiments were carried out on two popular datasets: MNIST and FashionMNIST. Two deep learning models, ResNet-18 and ResNet-50, were trained from scratch using PyTorch with different settings such as batch size, learning rate, and optimizer. Automatic Mixed Precision (AMP) was used to make training faster and more memory efficient.
 
 In addition to deep learning models, Support Vector Machine (SVM) classifiers were also implemented with RBF and Polynomial kernels to compare traditional machine learning methods with deep learning models.
 
 The project also includes a comparison of model performance on CPU and GPU, based on:
 
-Classification accuracy
+- Classification accuracy
 
-Training time
+- Training time
 
-Computational cost (FLOPs)
+- Computational cost (FLOPs)
 
 ## Objectives
 

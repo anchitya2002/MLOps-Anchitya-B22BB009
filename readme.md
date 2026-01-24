@@ -1,117 +1,213 @@
-# DLOps Assignment 1: Image Classification Experiments on MNIST and FashionMNIST
+Below is a **professionally rewritten, well-structured `README.md`** for your repository.
+You can **replace your current README with this**. It improves clarity, formatting, academic tone, and evaluation readiness.
 
-**Name:** Anchitya Kumar  
-**Roll Number:** B22BB009  
-**Submission Date:** January 24, 2026  
+---
 
-## Project Overview
+# DLOps Assignment 1
 
-This repository contains the complete submission for **DLOps Assignment 1**. The goal was to implement and compare deep learning models (ResNet-18 and ResNet-50 trained from scratch) and classical SVM classifiers on the MNIST and FashionMNIST datasets.
+## Image Classification on MNIST and FashionMNIST
 
-Key experiments:
-- 70% train / 10% validation / 20% test split
-- Hyperparameter variation: batch size (16, 32), optimizers (SGD, Adam), learning rates (0.001, 0.0001)
-- Additional variations: number of epochs, `pin_memory=True/False`
-- Automatic Mixed Precision (AMP) enabled for all deep learning training
-- All valid deep learning configurations achieved >80% test accuracy on both datasets
-- SVM experiments with RBF and polynomial kernels
-- CPU vs GPU comparison on FashionMNIST (training time and FLOPs)
+**Student Name:** Anchitya Kumar
+**Roll Number:** B22BB009
+**Course:** DLOps
+**Submission Date:** January 24, 2026
 
-All code is implemented in PyTorch (deep learning) and scikit-learn (SVM).
+---
 
-## Critical Links
+## 📌 Project Overview
 
-- **Colab Notebook** (fully executed with results, plots, and models):  
-  [Open in Colab](https://colab.research.google.com/drive/PASTE-YOUR-COLAB-LINK-HERE)  
-  *(Mandatory – without this, marks will be zero)*
+This repository contains the complete implementation and experimental analysis for **DLOps Assignment 1**.
+The objective of this assignment is to evaluate and compare:
 
-- **GitHub Pages** (hosted report and results):  
-  [View Site](https://YOUR-USERNAME.github.io/MLOps-Anchitya-B22BB009/)
+* Deep learning models trained from scratch
 
-- **PDF Report**: [B22BB009_Anchitya_Kumar_Ass1.pdf](./B22BB009_Anchitya_Kumar_Ass1.pdf)
+  * ResNet-18
+  * ResNet-50
+* Classical machine learning approach
 
-## Repository Structure
-MLOps-Anchitya-B22BB009/
-├── Assignment1.ipynb                  # Complete notebook with all experiments
-├── B22BB009_Anchitya_Kumar_Ass1.pdf   # Detailed report (as per naming convention)
-├── results/
-│   ├── plots/                         # Training/validation curves
-│   │   ├── mnist_resnet18_adam_bs16.png
-│   │   ├── fashionmnist_resnet50_adam_bs16.png
-│   │   └── ...
-│   ├── best_model.pth                 # Weights of the best-performing model
-│   └── flops_summary.txt              # FLOPs calculations
-├── README.md                          # This file
-└── requirements.txt                   # Optional environment dependencies
+  * Support Vector Machines (SVM)
 
+Experiments are performed on:
 
-> This content is on the **Assignment 1** branch as required.
+* MNIST
+* FashionMNIST
 
-## Results Summary
+All implementations are done using:
 
-### Q1(a): Deep Learning Test Accuracy (%)
+* **PyTorch** (deep learning models)
+* **Scikit-learn** (SVM experiments)
+
+---
+
+## 🎯 Objectives
+
+* Implement ResNet architectures **without pretrained weights**
+* Perform systematic hyperparameter experiments:
+
+  * Batch sizes: 16, 32
+  * Optimizers: SGD, Adam
+  * Learning rates: 0.001, 0.0001
+* Train/Validation/Test split: **70% / 10% / 20%**
+* Apply Automatic Mixed Precision (AMP)
+* Compare:
+
+  * Accuracy
+  * Training time
+  * FLOPs
+  * CPU vs GPU performance
+* Evaluate SVM using RBF and Polynomial kernels
+
+---
+
+## 🔗 Important Links
+
+* **Google Colab Notebook (Executed with outputs and plots)**
+  👉 *Add your actual link here before submission*
+
+  ```
+  https://colab.research.google.com/drive/XXXXXXXX
+  ```
+
+* **PDF Report**
+
+  ```
+  B22BB009_Anchitya_Kumar_Ass1.pdf
+  ```
+
+* **GitHub Repository**
+
+  ```
+  https://github.com/anchitya2002/MLOps-Name-B22BB009
+  ```
+
+---
+
+## 📂 Repository Structure
+
+```
+MLOps-Name-B22BB009/
+│
+├── question_1.ipynb            # Q1(a): Deep learning experiments
+├── question_1(b).ipynb         # Q1(b): SVM experiments
+├── question2_.ipynb            # Q2: CPU vs GPU + FLOPs analysis
+├── README.md                   # Project documentation (this file)
+├── requirements.txt            # Dependencies
+└── data/                       # Dataset directory (if generated locally)
+```
+
+---
+
+## 📊 Results Summary
+
+### Q1(a): Deep Learning Accuracy
 
 #### MNIST
-| Batch Size | Optimizer | Learning Rate | ResNet-18 | ResNet-50 |
-|------------|-----------|---------------|-----------|-----------|
-| 16         | SGD       | 0.001         |           |           |
-| 16         | SGD       | 0.0001        |           |           |
-| 16         | Adam      | 0.001         |           |           |
-| 16         | Adam      | 0.0001        |           |           |
-| 32         | SGD       | 0.001         |           |           |
-| 32         | SGD       | 0.0001        |           |           |
-| 32         | Adam      | 0.001         |           |           |
-| 32         | Adam      | 0.0001        |           |           |
+
+| Batch Size | Optimizer | Learning Rate | ResNet-18 (%) | ResNet-50 (%) |
+| ---------- | --------- | ------------- | ------------- | ------------- |
+| 16         | SGD       | 0.001         |               |               |
+| 16         | SGD       | 0.0001        |               |               |
+| 16         | Adam      | 0.001         |               |               |
+| 16         | Adam      | 0.0001        |               |               |
+| 32         | SGD       | 0.001         |               |               |
+| 32         | SGD       | 0.0001        |               |               |
+| 32         | Adam      | 0.001         |               |               |
+| 32         | Adam      | 0.0001        |               |               |
 
 #### FashionMNIST
-| Batch Size | Optimizer | Learning Rate | ResNet-18 | ResNet-50 |
-|------------|-----------|---------------|-----------|-----------|
-| 16         | SGD       | 0.001         |           |           |
-| 16         | SGD       | 0.0001        |           |           |
-| 16         | Adam      | 0.001         |           |           |
-| 16         | Adam      | 0.0001        |           |           |
-| 32         | SGD       | 0.001         |           |           |
-| 32         | SGD       | 0.0001        |           |           |
-| 32         | Adam      | 0.001         |           |           |
-| 32         | Adam      | 0.0001        |           |           |
 
-> **Observation**: All valid runs exceeded 80% accuracy on FashionMNIST.
+| Batch Size | Optimizer | Learning Rate | ResNet-18 (%) | ResNet-50 (%) |
+| ---------- | --------- | ------------- | ------------- | ------------- |
+| 16         | SGD       | 0.001         |               |               |
+| 16         | SGD       | 0.0001        |               |               |
+| 16         | Adam      | 0.001         |               |               |
+| 16         | Adam      | 0.0001        |               |               |
+| 32         | SGD       | 0.001         |               |               |
+| 32         | SGD       | 0.0001        |               |               |
+| 32         | Adam      | 0.001         |               |               |
+| 32         | Adam      | 0.0001        |               |               |
+
+> **Observation:** All valid runs achieved **>80% accuracy on FashionMNIST**.
+
+---
 
 ### Q1(b): SVM Results
 
-| Dataset       | Kernel | C   | Test Accuracy (%) | Training Time (ms) |
-|---------------|--------|-----|-------------------|--------------------|
-| MNIST         | RBF    |     |                   |                    |
-| MNIST         | Poly   |     |                   |                    |
-| FashionMNIST  | RBF    |     |                   |                    |
-| FashionMNIST  | Poly   |     |                   |                    |
+| Dataset      | Kernel     | Test Accuracy (%) | Training Time (ms) |
+| ------------ | ---------- | ----------------- | ------------------ |
+| MNIST        | RBF        |                   |                    |
+| MNIST        | Polynomial |                   |                    |
+| FashionMNIST | RBF        |                   |                    |
+| FashionMNIST | Polynomial |                   |                    |
 
-### Q2: CPU vs GPU Comparison (FashionMNIST, Batch Size 16)
+---
+
+### Q2: CPU vs GPU Comparison (FashionMNIST, Batch Size = 16)
 
 | Compute | Optimizer | LR    | ResNet-18 Acc (%) | ResNet-50 Acc (%) | ResNet-18 Time (s) | ResNet-50 Time (s) | ResNet-18 FLOPs (G) | ResNet-50 FLOPs (G) |
-|---------|-----------|-------|-------------------|-------------------|--------------------|--------------------|---------------------|---------------------|
+| ------- | --------- | ----- | ----------------- | ----------------- | ------------------ | ------------------ | ------------------- | ------------------- |
 | CPU     | SGD       | 0.001 |                   |                   |                    |                    |                     |                     |
 | CPU     | Adam      | 0.001 |                   |                   |                    |                    |                     |                     |
 | GPU     | SGD       | 0.001 |                   |                   |                    |                    |                     |                     |
 | GPU     | Adam      | 0.001 |                   |                   |                    |                    |                     |                     |
 
-## Key Insights
+---
 
-- Adam generally converged faster than SGD.
-- ResNet-50 slightly outperformed ResNet-18 on FashionMNIST but required more compute.
-- Smaller batch sizes (16) often yielded better generalization.
-- GPU training was 10–15× faster than CPU with identical accuracy.
-- SVMs performed well on MNIST but scaled poorly on FashionMNIST.
+## 📌 Key Insights
 
-Training/validation plots for the best models are available in `results/plots/`.
+* Adam optimizer converges faster than SGD across datasets.
+* ResNet-50 provides slightly higher accuracy than ResNet-18, but at significantly higher computational cost.
+* Smaller batch size (16) often improves generalization.
+* GPU training is approximately **10–15× faster** than CPU.
+* SVM performs strongly on MNIST but scales poorly to FashionMNIST.
 
-## Reproducibility
+---
 
-To run locally:
+## ⚙️ Reproducibility
+
+### Run Locally
 
 ```bash
-git clone https://github.com/YOUR-USERNAME/MLOps-Anchitya-B22BB009.git
-cd MLOps-Anchitya-B22BB009
-git checkout Assignment1
-pip install torch torchvision torchaudio scikit-learn matplotlib
-jupyter notebook Assignment1.ipynb
+git clone https://github.com/anchitya2002/MLOps-Name-B22BB009.git
+cd MLOps-Name-B22BB009
+pip install -r requirements.txt
+jupyter notebook
+```
+
+Open and execute:
+
+* `question_1.ipynb`
+* `question_1(b).ipynb`
+* `question2_.ipynb`
+
+---
+
+## 🧪 Requirements
+
+Dependencies listed in `requirements.txt`:
+
+* torch
+* torchvision
+* torchaudio
+* scikit-learn
+* matplotlib
+* pandas
+* fvcore (for FLOPs calculation)
+
+---
+
+## 📬 Notes
+
+* All deep learning models were trained **from scratch (no pretrained weights used)**.
+* AMP was enabled where GPU was available.
+* CPU vs GPU experiments were executed on Google Colab.
+
+---
+
+If you want, I can also help you with:
+
+* ✅ Writing a **strong project abstract**
+* ✅ Generating a **requirements.txt automatically**
+* ✅ Making your GitHub repo look even more professional
+* ✅ Writing a short **viva-ready explanation**
+* ✅ Creating a polished **PDF report template**

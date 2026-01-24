@@ -1,45 +1,17 @@
-Below is a **professionally rewritten, well-structured `README.md`** for your repository.
-You can **replace your current README with this**. It improves clarity, formatting, academic tone, and evaluation readiness.
-
----
-
 # DLOps Assignment 1
 
-## Image Classification on MNIST and FashionMNIST
+## Project Overview
 
-**Student Name:** Anchitya Kumar
-**Roll Number:** B22BB009
-**Course:** DLOps
-**Submission Date:** January 24, 2026
+Experiments were performed on two widely used benchmark datasets, MNIST and FashionMNIST. Two convolutional neural network models, ResNet-18 and ResNet-50, were trained from scratch using PyTorch under multiple hyperparameter configurations, including different batch sizes, learning rates, and optimizers. Automatic Mixed Precision (AMP) was enabled to improve training speed and memory efficiency.
 
----
+Alongside deep learning models, classical Support Vector Machine (SVM) classifiers were implemented using both RBF and Polynomial kernels to compare traditional machine learning methods with deep learning approaches.
 
-## 📌 Project Overview
+The project also includes a detailed comparison of performance between CPU and GPU execution with analysis based on:
+- Classification accuracy  
+- Training time  
+- Computational cost (FLOPs)  
 
-This repository contains the complete implementation and experimental analysis for **DLOps Assignment 1**.
-The objective of this assignment is to evaluate and compare:
-
-* Deep learning models trained from scratch
-
-  * ResNet-18
-  * ResNet-50
-* Classical machine learning approach
-
-  * Support Vector Machines (SVM)
-
-Experiments are performed on:
-
-* MNIST
-* FashionMNIST
-
-All implementations are done using:
-
-* **PyTorch** (deep learning models)
-* **Scikit-learn** (SVM experiments)
-
----
-
-## 🎯 Objectives
+## Objectives
 
 * Implement ResNet architectures **without pretrained weights**
 * Perform systematic hyperparameter experiments:
@@ -59,30 +31,7 @@ All implementations are done using:
 
 ---
 
-## 🔗 Important Links
-
-* **Google Colab Notebook (Executed with outputs and plots)**
-  👉 *Add your actual link here before submission*
-
-  ```
-  https://colab.research.google.com/drive/XXXXXXXX
-  ```
-
-* **PDF Report**
-
-  ```
-  B22BB009_Anchitya_Kumar_Ass1.pdf
-  ```
-
-* **GitHub Repository**
-
-  ```
-  https://github.com/anchitya2002/MLOps-Name-B22BB009
-  ```
-
----
-
-## 📂 Repository Structure
+## Repository Structure
 
 ```
 MLOps-Name-B22BB009/
@@ -97,63 +46,75 @@ MLOps-Name-B22BB009/
 
 ---
 
-## 📊 Results Summary
+## Results Summary
 
-### Q1(a): Deep Learning Accuracy
 
 #### MNIST
 
 | Batch Size | Optimizer | Learning Rate | ResNet-18 (%) | ResNet-50 (%) |
 | ---------- | --------- | ------------- | ------------- | ------------- |
-| 16         | SGD       | 0.001         |               |               |
-| 16         | SGD       | 0.0001        |               |               |
-| 16         | Adam      | 0.001         |               |               |
-| 16         | Adam      | 0.0001        |               |               |
-| 32         | SGD       | 0.001         |               |               |
-| 32         | SGD       | 0.0001        |               |               |
-| 32         | Adam      | 0.001         |               |               |
-| 32         | Adam      | 0.0001        |               |               |
+| 16         | SGD       | 0.001         |     98.43     |   96.94       |
+| 16         | SGD       | 0.0001        |     94.48     |   67.26       |
+| 16         | Adam      | 0.001         |     98.87     |   97.51       |
+| 16         | Adam      | 0.0001        |     98.62     |   96.75       |
+| 32         | SGD       | 0.001         |     97.80     |   95.56       |
+| 32         | SGD       | 0.0001        |     92.99     |   38.73       |
+| 32         | Adam      | 0.001         |     98.28     |   98.23       |
+| 32         | Adam      | 0.0001        |     98.45     |   96.53       |
 
 #### FashionMNIST
 
-| Batch Size | Optimizer | Learning Rate | ResNet-18 (%) | ResNet-50 (%) |
-| ---------- | --------- | ------------- | ------------- | ------------- |
-| 16         | SGD       | 0.001         |               |               |
-| 16         | SGD       | 0.0001        |               |               |
-| 16         | Adam      | 0.001         |               |               |
-| 16         | Adam      | 0.0001        |               |               |
-| 32         | SGD       | 0.001         |               |               |
-| 32         | SGD       | 0.0001        |               |               |
-| 32         | Adam      | 0.001         |               |               |
-| 32         | Adam      | 0.0001        |               |               |
+| Batch Size | Optimizer | Learning Rate | ResNet-18 (%) | ResNet-50 (%)  |
+| ---------- | --------- | ------------- | ------------- | -------------  |
+| 16         | SGD       | 0.001         |    87.83      |  81.68         |
+| 16         | SGD       | 0.0001        |    82.49      |  66.20         |
+| 16         | Adam      | 0.001         |    89.33      |  83.10         |
+| 16         | Adam      | 0.0001        |    89.93      |  84.72         |
+| 32         | SGD       | 0.001         |    87.07      |  79.92         |
+| 32         | SGD       | 0.0001        |    79.91      |  44.83         |
+| 32         | Adam      | 0.001         |    90.27      |  85.92         |
+| 32         | Adam      | 0.0001        |    89.36      |  85.49         |
 
 > **Observation:** All valid runs achieved **>80% accuracy on FashionMNIST**.
 
 ---
 
-### Q1(b): SVM Results
+### SVM Results
 
 | Dataset      | Kernel     | Test Accuracy (%) | Training Time (ms) |
 | ------------ | ---------- | ----------------- | ------------------ |
-| MNIST        | RBF        |                   |                    |
-| MNIST        | Polynomial |                   |                    |
-| FashionMNIST | RBF        |                   |                    |
-| FashionMNIST | Polynomial |                   |                    |
+| MNIST        | RBF        |   92.25	          |   18747.78         |
+| MNIST        | Polynomial |   87.85           |   44918.00         |
+| FashionMNIST | RBF        |   86.50           |   17712.64         |
+| FashionMNIST | Polynomial |   83.60           |   23913.40         |
+             |
 
 ---
 
-### Q2: CPU vs GPU Comparison (FashionMNIST, Batch Size = 16)
+### CPU vs GPU Comparison (FashionMNIST, Batch Size = 16)
 
 | Compute | Optimizer | LR    | ResNet-18 Acc (%) | ResNet-50 Acc (%) | ResNet-18 Time (s) | ResNet-50 Time (s) | ResNet-18 FLOPs (G) | ResNet-50 FLOPs (G) |
 | ------- | --------- | ----- | ----------------- | ----------------- | ------------------ | ------------------ | ------------------- | ------------------- |
-| CPU     | SGD       | 0.001 |                   |                   |                    |                    |                     |                     |
-| CPU     | Adam      | 0.001 |                   |                   |                    |                    |                     |                     |
-| GPU     | SGD       | 0.001 |                   |                   |                    |                    |                     |                     |
-| GPU     | Adam      | 0.001 |                   |                   |                    |                    |                     |                     |
+| CPU     | SGD       | 0.001 |        86.18      |    81.41          |         1417.61 s  | 3153.08 s          |  142.04             |  329.06             |
+| CPU     | Adam      | 0.001 |        87.54      |    83.62          |         2023.53    | 4042.74            |  142.04             |  329.06             |
+| GPU     | SGD       | 0.001 |        85.81      |    78.65          |         1317.55    | 3004.02            |  142.04             |  329.06             |
+| GPU     | Adam      | 0.001 |        87         |    82.55          |         2017.23    | 4216.6             |  142.04             |  329.06             |
 
 ---
 
-## 📌 Key Insights
+### CPU vs GPU Comparison (FashionMNIST, Batch Size = 32)
+
+| Compute | Optimizer | LR    | ResNet-18 Acc (%) | ResNet-50 Acc (%) | ResNet-18 Time (s) | ResNet-50 Time (s) | ResNet-18 FLOPs (G) | ResNet-50 FLOPs (G) |
+| ------- | --------- | ----- | ----------------- | ----------------- | ------------------ | ------------------ | ------------------- | ------------------- |
+| CPU     | SGD       | 0.001 |        86.18      |    81.41          |         1417.61 s  | 3153.08 s          |  142.04             |  329.06             |
+| CPU     | Adam      | 0.001 |        87.54      |    83.62          |         2023.53    | 4042.74            |  142.04             |  329.06             |
+| GPU     | SGD       | 0.001 |        85.81      |    78.65          |         1317.55    | 3004.02            |  142.04             |  329.06             |
+| GPU     | Adam      | 0.001 |        87         |    82.55          |         2017.23    | 4216.6             |  142.04             |  329.06             |
+
+---
+
+
+## Key Insights
 
 * Adam optimizer converges faster than SGD across datasets.
 * ResNet-50 provides slightly higher accuracy than ResNet-18, but at significantly higher computational cost.
@@ -161,28 +122,17 @@ MLOps-Name-B22BB009/
 * GPU training is approximately **10–15× faster** than CPU.
 * SVM performs strongly on MNIST but scales poorly to FashionMNIST.
 
----
 
-## ⚙️ Reproducibility
 
 ### Run Locally
 
 ```bash
 git clone https://github.com/anchitya2002/MLOps-Name-B22BB009.git
-cd MLOps-Name-B22BB009
 pip install -r requirements.txt
-jupyter notebook
 ```
 
-Open and execute:
 
-* `question_1.ipynb`
-* `question_1(b).ipynb`
-* `question2_.ipynb`
-
----
-
-## 🧪 Requirements
+## Requirements
 
 Dependencies listed in `requirements.txt`:
 
@@ -194,20 +144,10 @@ Dependencies listed in `requirements.txt`:
 * pandas
 * fvcore (for FLOPs calculation)
 
----
 
-## 📬 Notes
+## License
 
-* All deep learning models were trained **from scratch (no pretrained weights used)**.
-* AMP was enabled where GPU was available.
-* CPU vs GPU experiments were executed on Google Colab.
+This project is licensed under the **MIT License**.  
+You are free to use, modify, distribute, and build upon this project with proper attribution.
 
----
-
-If you want, I can also help you with:
-
-* ✅ Writing a **strong project abstract**
-* ✅ Generating a **requirements.txt automatically**
-* ✅ Making your GitHub repo look even more professional
-* ✅ Writing a short **viva-ready explanation**
-* ✅ Creating a polished **PDF report template**
+See the full license in the [LICENSE](LICENSE) file.

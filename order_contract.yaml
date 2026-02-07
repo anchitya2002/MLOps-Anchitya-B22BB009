@@ -1,0 +1,66 @@
+# ═══════════════════════════════════════════════════════════════════════════
+# DATA CONTRACT: Flash Sale Orders
+#
+# Producer: Order Processing System
+# Consumer: Marketing Dashboard Team
+#
+# Agreement:
+# - Order total must be non-negative
+# - Status codes mapped to readable enums
+# - Unmapped status codes must be rejected
+# ═══════════════════════════════════════════════════════════════════════════
+
+dataContractSpecification: 0.9.3
+id: urn:datacontract:ecommerce:orders
+version: 1.0.0
+
+# 1. OWNERSHIP & GOVERNANCE
+info:
+  title: "Flash Sale Orders"
+  description: |
+    Real-time order stream used by marketing dashboards
+    to dynamically adjust ad spend during flash sales.
+  owner: "E-commerce Data Engineering"
+  contact:
+    name: "Commerce Data Oncall"
+    email: "commerce-data@company.com"
+    slack: "#commerce-alerts"
+  classification: internal
+  tags: [ecommerce, orders, marketing]
+
+# 2. SCHEMA DEFINITION
+schema:
+  type: object
+  properties:
+
+    order_total_usd:
+      type: number
+      description: "Total order value in USD"
+      pii: false
+      physical_mapping: o_total
+
+  # enum implementation for status code mapping
+    status:
+      type: string
+      enum: [PAID, SHIPPED, CANCELLED]
+      description: "Order status mapped from numeric codes"
+      pii: false
+      physical_mapping: status_code
+
+  required:
+    - order_total_usd
+    - status
+
+# 4. DATA QUALITY RULES
+quality:
+  - name: order_total_non_negative
+    type: validity
+    expression: "order_total_usd >= 0"
+    threshold: "100%"
+    enforcement: hard
+
+  - name: valid_status_enum
+    type: validity
+    expression: "status IN ('PAID','SHIPPED','CANCELLED')"
+    threshold: "100%"
+    enforcement: hard

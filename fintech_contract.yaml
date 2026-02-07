@@ -1,0 +1,67 @@
+# ═══════════════════════════════════════════════════════════════════════════
+# DATA CONTRACT: FinTech Transaction Log
+#
+# Producer: Core Banking System
+# Consumer: Fraud Detection Platform
+#
+# Agreement:
+# - Account IDs must match strict format
+# - Any violation blocks the pipeline (hard circuit breaker)
+# ═══════════════════════════════════════════════════════════════════════════
+
+dataContractSpecification: 0.9.3
+id: urn:datacontract:fintech:transactions
+version: 1.0.0
+
+# 1. OWNERSHIP & GOVERNANCE
+info:
+  title: "FinTech Transaction Log"
+  description: |
+    Real-time financial transactions scanned for
+    fraud detection and risk analysis.
+  owner: "Bank Data Engineering"
+  contact:
+    name: "Fraud Platform Oncall"
+    email: "fraud-data@bank.com"
+    slack: "#fraud-alerts"
+  classification: restricted
+  tags: [fintech, transactions, fraud]
+
+# 2. SCHEMA DEFINITION
+schema:
+  type: object
+  properties:
+
+    account_source_id:
+      type: string
+      description: "Source bank account identifier"
+      pii: true
+      physical_mapping: acct_src
+
+    account_destination_id:
+      type: string
+      description: "Destination bank account identifier"
+      pii: true
+      physical_mapping: acct_dest
+
+    transaction_timestamp:
+      type: string
+      format: date-time
+      description: "Timestamp of the transaction"
+      pii: false
+      physical_mapping: tx_ts
+
+  required:
+    - account_source_id
+    - account_destination_id
+    - transaction_timestamp
+
+# 4. DATA QUALITY RULES
+# Regex Pattern Check
+quality:
+  - name: source_account_id_pattern
+    type: validity
+    expression: "REGEXP_LIKE(account_source_id, '^[A-Z0-9]{10}$')"
+    threshold: "100%"
+    # hard circuit breaker annotaion
+    enforcement: hard

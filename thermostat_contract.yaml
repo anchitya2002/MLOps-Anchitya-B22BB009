@@ -1,0 +1,71 @@
+# ═══════════════════════════════════════════════════════════════════════════
+# DATA CONTRACT: Smart Thermostat Telemetry
+#
+# Producer: IoT Thermostat Devices
+# Consumer: Central Analytics Platform
+#
+# Agreement:
+# - Reject unrealistic temperature readings
+# - Reject invalid battery level values
+# ═══════════════════════════════════════════════════════════════════════════
+
+dataContractSpecification: 0.9.3
+id: urn:datacontract:iot:thermostat
+version: 1.0.0
+
+# 1. OWNERSHIP & GOVERNANCE
+info:
+  title: "Smart Thermostat Telemetry"
+  description: |
+    Minute-level telemetry from smart thermostats used
+    for home temperature analytics.
+  owner: "IoT Data Platform"
+  contact:
+    name: "IoT Operations"
+    email: "iot-ops@company.com"
+    slack: "#iot-alerts"
+  classification: internal
+  tags: [iot, sensors, temperature]
+
+# 2. SCHEMA DEFINITION
+schema:
+  type: object
+  properties:
+
+    device_id:
+      type: string
+      description: "Unique thermostat device identifier"
+      pii: false
+      physical_mapping: dev_id
+
+    temperature_celsius:
+      type: number
+      description: "Measured temperature in Celsius"
+      pii: false
+      physical_mapping: temp_c
+
+    battery_level:
+      type: number
+      description: "Battery level between 0.0 and 1.0"
+      pii: false
+      physical_mapping: batt_lvl
+
+  required:
+    - device_id
+    - temperature_celsius
+    - battery_level
+
+# 4. DATA QUALITY RULES
+# Temperature validation 
+quality:
+  - name: temperature_valid_range
+    type: validity
+    expression: "temperature_celsius >= -30 AND temperature_celsius <= 60"
+    threshold: "100%"
+    enforcement: hard
+
+  - name: battery_level_valid_range
+    type: validity
+    expression: "battery_level >= 0.0 AND battery_level <= 1.0"
+    threshold: "100%"
+    enforcement: hard

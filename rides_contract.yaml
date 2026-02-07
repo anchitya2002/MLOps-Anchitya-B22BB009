@@ -1,0 +1,112 @@
+# ═══════════════════════════════════════════════════════════════════════════
+# DATA CONTRACT: CityMove Ride Events
+#
+# NEGOTIATION SUMMARY
+# ───────────────────
+# Producer: CityMove Data Engineering Team
+# Consumer: Dynamic Pricing ML Team
+#
+# Agreed Terms:
+# - Logical field names used to decouple ML from DB schema changes
+# - Fare must be non-negative
+# - Driver rating must be between 1.0 and 5.0 inclusive
+# - Distance must never be NULL
+# - Passenger ID is PII
+# - Data freshness requirement: 30 minutes
+# - Hard enforcement to protect ML models from bad data
+# ═══════════════════════════════════════════════════════════════════════════
+
+dataContractSpecification: 0.9.3
+id: urn:datacontract:citymove:rides
+version: 1.0.0
+
+# 1. OWNERSHIP & GOVERNANCE
+info:
+  title: "CityMove Ride Data"
+  description: |
+    Ride-level events used by the dynamic pricing machine learning model.
+    Provides a stable and governed interface between operational systems
+    and analytical consumers.
+  owner: "CityMove Data Engineering"
+  contact:
+    name: "Data Platform Oncall"
+    email: "data-eng@citymove.com"
+    slack: "#data-eng-alerts"
+  classification: confidential
+  tags: [rideshare, pricing, ml]
+
+# 2. SCHEMA DEFINITION
+schema:
+  type: object
+  properties:
+
+    ride_id:
+      type: string
+      description: "Unique identifier for a ride"
+      pii: false
+      physical_mapping: r_id
+
+    pickup_timestamp:
+      type: string
+      format: date-time
+      description: "Ride pickup time in UTC"
+      pii: false
+      physical_mapping: ts_start
+
+    passenger_id:
+      type: integer
+      description: "Identifier for the passenger"
+      pii: true # PII Tagging
+      physical_mapping: pax_id
+
+    driver_rating:
+      type: number
+      description: "Driver rating provided by passenger (1.0–5.0)"
+      pii: false
+      physical_mapping: d_rating
+
+    fare_usd:
+      type: number
+      description: "Total ride fare in USD"
+      pii: false
+      physical_mapping: fare_final
+
+    distance_meters:
+      type: integer
+      description: "Distance traveled during the ride in meters"
+      pii: false
+      physical_mapping: dist_m
+
+  required:
+    - ride_id
+    - pickup_timestamp
+    - passenger_id
+    - driver_rating
+    - fare_usd
+    - distance_meters
+
+# 3. SLAs
+sla:
+  freshness:
+    threshold: "30 minutes"
+    description: "Data must be available within 30 minutes of ride completion"
+
+# 4. DATA QUALITY RULES
+quality:
+  - name: fare_non_negative
+    type: validity
+    expression: "fare_usd >= 0"
+    threshold: "100%"
+    enforcement: hard
+
+  - name: driver_rating_range
+    type: validity
+    expression: "driver_rating >= 1.0 AND driver_rating <= 5.0"
+    threshold: "100%"
+    enforcement: hard
+
+  - name: distance_not_null
+    type: completeness
+    column: distance_meters
+    threshold: "100%"
+    enforcement: hard

@@ -1,0 +1,10 @@
+{
+  "children": 0,
+  "comics_graphic": 1,
+  "fantasy_paranormal": 2,
+  "history_biography": 3,
+  "mystery_thriller_crime": 4,
+  "poetry": 5,
+  "romance": 6,
+  "young_adult": 7
+}

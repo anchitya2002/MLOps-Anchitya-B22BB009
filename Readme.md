@@ -1,8 +1,5 @@
 # Assignment 4 — Transformer Translation (Ray Tune + Optuna)
 
-**Anchitya Kumar (B22BB009)**
-IIT Jodhpur
-
 ---
 
 ## Overview
@@ -52,6 +49,4 @@ pip install "ray[train,tune]" optuna torch nltk pandas tqdm
 * Baseline: `en_to_hi.ipynb`
 * Tuned: `b22bb009_ass_4_tuned_en_to_hi.ipynb`
 
----
 
-Final model achieved **73.79 BLEU in just 15 epochs**.

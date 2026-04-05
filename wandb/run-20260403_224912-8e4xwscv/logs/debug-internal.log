@@ -1,0 +1,50 @@
+{"time":"2026-04-03T22:49:15.3830057+05:30","level":"INFO","msg":"wandb-core"}
+{"time":"2026-04-03T22:49:15.3977471+05:30","level":"INFO","msg":"stream: starting","core version":"0.25.1"}
+{"time":"2026-04-03T22:49:16.4315461+05:30","level":"INFO","msg":"stream: created new stream","id":"8e4xwscv"}
+{"time":"2026-04-03T22:49:16.4352225+05:30","level":"INFO","msg":"handler: started"}
+{"time":"2026-04-03T22:49:16.4525211+05:30","level":"INFO","msg":"stream: started"}
+{"time":"2026-04-03T22:49:16.4541212+05:30","level":"INFO","msg":"sender: started"}
+{"time":"2026-04-03T22:49:16.4541212+05:30","level":"INFO","msg":"writer: started","stream_id":"8e4xwscv"}
+{"time":"2026-04-03T22:49:17.6251061+05:30","level":"INFO","msg":"filestream: sending request","total_files":1,"console_offset":0,"console_lines":1}
+{"time":"2026-04-03T22:49:18.0997863+05:30","level":"INFO","msg":"filestream: request sent","status":"200 OK"}
+{"time":"2026-04-03T22:49:32.6256011+05:30","level":"INFO","msg":"filestream: sending request","total_files":2,"events_offset":0,"events_lines":2,"console_offset":0,"console_lines":2,"uploaded_len":2}
+{"time":"2026-04-03T22:49:33.0795405+05:30","level":"INFO","msg":"filestream: request sent","status":"200 OK"}
+{"time":"2026-04-03T22:49:47.6252675+05:30","level":"INFO","msg":"filestream: sending request","total_files":2,"events_offset":2,"events_lines":2,"console_offset":1,"console_lines":1}
+{"time":"2026-04-03T22:49:48.0594761+05:30","level":"INFO","msg":"filestream: request sent","status":"200 OK"}
+{"time":"2026-04-03T22:50:02.6260709+05:30","level":"INFO","msg":"filestream: sending request","total_files":2,"events_offset":4,"events_lines":2,"console_offset":1,"console_lines":1}
+{"time":"2026-04-03T22:50:03.2725065+05:30","level":"INFO","msg":"filestream: request sent","status":"200 OK"}
+{"time":"2026-04-03T22:50:17.6252461+05:30","level":"INFO","msg":"filestream: sending request","total_files":2,"events_offset":6,"events_lines":2,"console_offset":1,"console_lines":1}
+{"time":"2026-04-03T22:50:18.0854266+05:30","level":"INFO","msg":"filestream: request sent","status":"200 OK"}
+{"time":"2026-04-03T22:50:32.6255187+05:30","level":"INFO","msg":"filestream: sending request","total_files":2,"events_offset":8,"events_lines":2,"console_offset":1,"console_lines":1}
+{"time":"2026-04-03T22:50:33.0463162+05:30","level":"INFO","msg":"filestream: request sent","status":"200 OK"}
+{"time":"2026-04-03T22:50:47.6256149+05:30","level":"INFO","msg":"filestream: sending request","total_files":2,"events_offset":10,"events_lines":2,"console_offset":1,"console_lines":1}
+{"time":"2026-04-03T22:50:48.0562869+05:30","level":"INFO","msg":"filestream: request sent","status":"200 OK"}
+{"time":"2026-04-03T22:51:02.6251678+05:30","level":"INFO","msg":"filestream: sending request","total_files":2,"events_offset":12,"events_lines":2,"console_offset":1,"console_lines":1}
+{"time":"2026-04-03T22:51:03.0212509+05:30","level":"INFO","msg":"filestream: request sent","status":"200 OK"}
+{"time":"2026-04-03T22:51:12.6245243+05:30","level":"ERROR","msg":"failed to write to chunk: failed to open file: open D:\\DLops _Assignment-5\\wandb\\run-20260403_224912-8e4xwscv\\files\\output.log: The system cannot find the path specified."}
+{"time":"2026-04-03T22:51:17.6257699+05:30","level":"INFO","msg":"filestream: sending request","total_files":2,"events_offset":14,"events_lines":2,"console_offset":1,"console_lines":1}
+{"time":"2026-04-03T22:51:18.0469089+05:30","level":"INFO","msg":"filestream: request sent","status":"200 OK"}
+{"time":"2026-04-03T22:51:32.6255395+05:30","level":"INFO","msg":"filestream: sending request","total_files":2,"events_offset":16,"events_lines":2,"console_offset":1,"console_lines":1}
+{"time":"2026-04-03T22:51:33.2303546+05:30","level":"INFO","msg":"filestream: request sent","status":"200 OK"}
+{"time":"2026-04-03T22:51:47.6256972+05:30","level":"INFO","msg":"filestream: sending request","total_files":2,"events_offset":18,"events_lines":2,"console_offset":1,"console_lines":1}
+{"time":"2026-04-03T22:51:47.9836105+05:30","level":"INFO","msg":"filestream: request sent","status":"200 OK"}
+{"time":"2026-04-03T22:52:02.625711+05:30","level":"INFO","msg":"filestream: sending request","total_files":2,"events_offset":20,"events_lines":2,"console_offset":1,"console_lines":1}
+{"time":"2026-04-03T22:52:03.0355869+05:30","level":"INFO","msg":"filestream: request sent","status":"200 OK"}
+{"time":"2026-04-03T22:52:17.6252776+05:30","level":"INFO","msg":"filestream: sending request","total_files":2,"events_offset":22,"events_lines":2,"console_offset":1,"console_lines":1}
+{"time":"2026-04-03T22:52:18.0225149+05:30","level":"INFO","msg":"filestream: request sent","status":"200 OK"}
+{"time":"2026-04-03T22:52:32.6257809+05:30","level":"INFO","msg":"filestream: sending request","total_files":2,"events_offset":24,"events_lines":2,"console_offset":1,"console_lines":1}
+{"time":"2026-04-03T22:52:33.0308649+05:30","level":"INFO","msg":"filestream: request sent","status":"200 OK"}
+{"time":"2026-04-03T22:52:47.6254806+05:30","level":"INFO","msg":"filestream: sending request","total_files":2,"events_offset":26,"events_lines":2,"console_offset":1,"console_lines":1}
+{"time":"2026-04-03T22:52:48.0462067+05:30","level":"INFO","msg":"filestream: request sent","status":"200 OK"}
+{"time":"2026-04-03T22:53:02.6255811+05:30","level":"INFO","msg":"filestream: sending request","total_files":2,"events_offset":28,"events_lines":2,"console_offset":1,"console_lines":1}
+{"time":"2026-04-03T22:53:03.0240264+05:30","level":"INFO","msg":"filestream: request sent","status":"200 OK"}
+{"time":"2026-04-03T22:53:13.6334772+05:30","level":"INFO","msg":"stream: closing"}
+{"time":"2026-04-03T22:53:13.6472596+05:30","level":"ERROR","msg":"sender: failed to upload run summary: open D:\\DLops _Assignment-5\\wandb\\run-20260403_224912-8e4xwscv\\files\\wandb-summary.json: The system cannot find the path specified."}
+{"time":"2026-04-03T22:53:13.6611369+05:30","level":"ERROR","msg":"sender: failed to upload run config: open D:\\DLops _Assignment-5\\wandb\\run-20260403_224912-8e4xwscv\\files\\config.yaml: The system cannot find the path specified."}
+{"time":"2026-04-03T22:53:13.6648895+05:30","level":"WARN","msg":"runfiles: upload: file does not exist","path":"D:\\DLops _Assignment-5\\wandb\\run-20260403_224912-8e4xwscv\\files\\output.log"}
+{"time":"2026-04-03T22:53:13.6675127+05:30","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2026-04-03T22:53:13.6680516+05:30","level":"INFO","msg":"filestream: sending request","total_files":2,"console_offset":1,"console_lines":46,"complete":true,"exit_code":255}
+{"time":"2026-04-03T22:53:14.1265432+05:30","level":"INFO","msg":"filestream: request sent","status":"200 OK"}
+{"time":"2026-04-03T22:53:14.1270505+05:30","level":"INFO","msg":"handler: closed"}
+{"time":"2026-04-03T22:53:14.1276135+05:30","level":"INFO","msg":"sender: closed"}
+{"time":"2026-04-03T22:53:14.1276135+05:30","level":"INFO","msg":"stream: closed"}

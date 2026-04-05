@@ -1,0 +1,32 @@
+# Default configuration for ViT-S CIFAR-100 fine-tuning
+model:
+  name: "vit_small_patch16_224"
+  pretrained: true
+  num_classes: 100
+  img_size: 224
+
+training:
+  epochs: 10
+  batch_size: 64
+  learning_rate: 1.0e-4
+  weight_decay: 1.0e-4
+  optimizer: "adamw"
+  scheduler: "cosine"
+  warmup_epochs: 1
+  seed: 42
+  val_split: 0.1
+  num_workers: 4
+
+lora:
+  dropout: 0.1
+  target_modules:
+    - "qkv"
+  bias: "none"
+
+wandb:
+  project: "dlops-assignment5-vit-lora"
+  entity: null  # Set your WandB entity/username
+
+data:
+  root: "./data"
+  download: true

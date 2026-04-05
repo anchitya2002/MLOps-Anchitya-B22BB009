@@ -1,0 +1,212 @@
+{
+  "best_value": 87.16,
+  "best_params": {
+    "rank": 8,
+    "alpha": 8,
+    "dropout": 0.1
+  },
+  "n_trials": 20,
+  "total_time_seconds": 66185.65169739723,
+  "all_trials": [
+    {
+      "number": 0,
+      "value": 86.06,
+      "params": {
+        "rank": 2,
+        "alpha": 2,
+        "dropout": 0.1
+      },
+      "state": "TrialState.COMPLETE"
+    },
+    {
+      "number": 1,
+      "value": 85.96,
+      "params": {
+        "rank": 8,
+        "alpha": 2,
+        "dropout": 0.1
+      },
+      "state": "TrialState.COMPLETE"
+    },
+    {
+      "number": 2,
+      "value": 86.3,
+      "params": {
+        "rank": 2,
+        "alpha": 4,
+        "dropout": 0.15
+      },
+      "state": "TrialState.COMPLETE"
+    },
+    {
+      "number": 3,
+      "value": 87.16,
+      "params": {
+        "rank": 8,
+        "alpha": 8,
+        "dropout": 0.1
+      },
+      "state": "TrialState.COMPLETE"
+    },
+    {
+      "number": 4,
+      "value": 86.22,
+      "params": {
+        "rank": 8,
+        "alpha": 8,
+        "dropout": 0.2
+      },
+      "state": "TrialState.COMPLETE"
+    },
+    {
+      "number": 5,
+      "value": 86.46,
+      "params": {
+        "rank": 4,
+        "alpha": 2,
+        "dropout": 0.05
+      },
+      "state": "TrialState.COMPLETE"
+    },
+    {
+      "number": 6,
+      "value": 84.8,
+      "params": {
+        "rank": 8,
+        "alpha": 8,
+        "dropout": 0.05
+      },
+      "state": "TrialState.PRUNED"
+    },
+    {
+      "number": 7,
+      "value": 86.78,
+      "params": {
+        "rank": 4,
+        "alpha": 8,
+        "dropout": 0.2
+      },
+      "state": "TrialState.COMPLETE"
+    },
+    {
+      "number": 8,
+      "value": 85.22,
+      "params": {
+        "rank": 8,
+        "alpha": 8,
+        "dropout": 0.1
+      },
+      "state": "TrialState.PRUNED"
+    },
+    {
+      "number": 9,
+      "value": 83.82,
+      "params": {
+        "rank": 8,
+        "alpha": 2,
+        "dropout": 0.2
+      },
+      "state": "TrialState.PRUNED"
+    },
+    {
+      "number": 10,
+      "value": 85.2,
+      "params": {
+        "rank": 2,
+        "alpha": 4,
+        "dropout": 0.15
+      },
+      "state": "TrialState.PRUNED"
+    },
+    {
+      "number": 11,
+      "value": 85.84,
+      "params": {
+        "rank": 4,
+        "alpha": 8,
+        "dropout": 0.2
+      },
+      "state": "TrialState.PRUNED"
+    },
+    {
+      "number": 12,
+      "value": 86.92,
+      "params": {
+        "rank": 4,
+        "alpha": 8,
+        "dropout": 0.1
+      },
+      "state": "TrialState.COMPLETE"
+    },
+    {
+      "number": 13,
+      "value": 85.84,
+      "params": {
+        "rank": 4,
+        "alpha": 8,
+        "dropout": 0.1
+      },
+      "state": "TrialState.PRUNED"
+    },
+    {
+      "number": 14,
+      "value": 86.7,
+      "params": {
+        "rank": 4,
+        "alpha": 8,
+        "dropout": 0.1
+      },
+      "state": "TrialState.COMPLETE"
+    },
+    {
+      "number": 15,
+      "value": 85.4,
+      "params": {
+        "rank": 8,
+        "alpha": 8,
+        "dropout": 0.1
+      },
+      "state": "TrialState.PRUNED"
+    },
+    {
+      "number": 16,
+      "value": 85.02,
+      "params": {
+        "rank": 4,
+        "alpha": 4,
+        "dropout": 0.1
+      },
+      "state": "TrialState.PRUNED"
+    },
+    {
+      "number": 17,
+      "value": 85.32,
+      "params": {
+        "rank": 4,
+        "alpha": 8,
+        "dropout": 0.1
+      },
+      "state": "TrialState.PRUNED"
+    },
+    {
+      "number": 18,
+      "value": 85.34,
+      "params": {
+        "rank": 8,
+        "alpha": 8,
+        "dropout": 0.15
+      },
+      "state": "TrialState.PRUNED"
+    },
+    {
+      "number": 19,
+      "value": 85.32,
+      "params": {
+        "rank": 2,
+        "alpha": 4,
+        "dropout": 0.05
+      },
+      "state": "TrialState.PRUNED"
+    }
+  ]
+}

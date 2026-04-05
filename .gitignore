@@ -1,0 +1,6 @@
+.env
+__pycache__/
+*.pyc
+wandb_logs/
+data/
+*.pdf

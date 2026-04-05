@@ -1,0 +1,25 @@
+version: '3.8'
+
+services:
+  training:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: dlops-assignment5
+    volumes:
+      - ./weights:/app/weights
+      - ./results:/app/results
+      - ./wandb_logs:/app/wandb_logs
+      - ./data:/app/data
+    environment:
+      - WANDB_API_KEY=${WANDB_API_KEY}
+      - NVIDIA_VISIBLE_DEVICES=all
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: 1
+              capabilities: [gpu]
+    shm_size: '8gb'
+    command: python run_all_experiments.py

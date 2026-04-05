@@ -12,7 +12,6 @@
 |----------|-----|
 | WandB Dashboard | https://wandb.ai/anchitya2003-indian-institute-of-technology-jodhpur/dlops-assignment5-vit-lora |
 | HuggingFace Model | https://huggingface.co/B22BB009/vit-s-cifar100-lora |
-| GitHub Branch | Assignment-5 |
 
 ---
 
@@ -401,6 +400,8 @@ Optuna was used to automate the search over LoRA hyperparameters.
 | Objective | Maximise validation accuracy |
 
 Results saved to `results/optuna_results.json` on completion.
+
+**Best parameters found by Optuna (over 5 epochs): Rank=8, Alpha=8, Dropout=0.1 → 87.16% validation accuracy**
 
 ---
 
